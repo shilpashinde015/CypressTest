@@ -1,0 +1,12 @@
+{
+    "url":"https://ineuron-courses.vercel.app/login",
+    "username":"ineuron@ineuron.ai",
+    "password":"ineuron",
+    "courseName":"testing",
+    "courseDescription":"New testing Course",
+    "courseCategory":"Testing_tutorial",
+    "price":"200",
+    "name":"shilpa",
+    "email":"shilpa@cypress.io",
+    "body":"This is sample body"
+ }
