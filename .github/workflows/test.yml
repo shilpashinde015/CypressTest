@@ -7,6 +7,9 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -16,6 +19,10 @@ jobs:
         run: npx cypress info
       - name: Verify Cypress can run
         run: npx cypress verify
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
