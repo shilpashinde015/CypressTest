@@ -7,8 +7,7 @@
     "cy:run:chrome": "cypress run --browser chrome --headed",
     "cy:run:firefox": "cypress run --browser firefox",
     "cy:run:electron ": "cypress run --browser electron --headed",
-    "cy:headless": "cypress run",
-    
+    "cy:headless": "cypress run"
   },
   "author": "",
   "license": "ISC",
@@ -19,7 +18,6 @@
     "cypress-xpath": "^2.0.1",
     "mocha": "^5.2.0",
     "mochawesome": "^4.1.0"
-  
   },
   "dependencies": {
     "cypress-get-table": "^1.0.1"
