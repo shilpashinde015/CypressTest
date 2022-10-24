@@ -1,13 +1,23 @@
-name: End-to-end tests
-on: [push]
+name: Cypress Tests
+on:
+  push:
+    branches:
+      - main
+ 
 jobs:
   cypress-run:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
-         
-      - name: cy:run:chrome
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+      - name: Show Cypress information
+        run: npx cypress info
+      - name: Verify Cypress can run
+        run: npx cypress verify
+      - name: Cypress run
         uses: cypress-io/github-action@v2
+        with:
+          build: npm run build
+          start: npm start
