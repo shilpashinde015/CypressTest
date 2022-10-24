@@ -9,7 +9,7 @@ jobs:
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v2
         
       - name: cy:run:chrome
-        uses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@v2
