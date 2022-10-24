@@ -19,9 +19,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-          
-      - uses: actions/upload-artifact@main
-     
+          uses: actions/upload-artifact@v2
+      
       - name: Cypress.io
         uses: cypress-io/github-action@v4.2.0
 
