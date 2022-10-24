@@ -8,8 +8,6 @@ jobs:
         uses: actions/checkout@v2
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
-      - name: Upload artifact
-        uses: actions/upload-artifact@v2
-        
+         
       - name: cy:run:chrome
         uses: cypress-io/github-action@v2
