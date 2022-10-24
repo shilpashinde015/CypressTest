@@ -1,6 +1,10 @@
 name: E2E on Chrome
 
-on: [push]
+on: 
+  push :
+    branches :
+      - main
+
 
 jobs:
   cypress-test:
@@ -16,10 +20,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           
-      - uses: actions/upload-artifact@master
-        with:
-          name: my-artifact
-          path: path/to/artifact
+      - uses: actions/upload-artifact@main
+     
       - name: Cypress.io
         uses: cypress-io/github-action@v4.2.0
 
