@@ -20,6 +20,8 @@ jobs:
         with:
           name: my-artifact
           path: path/to/artifact
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
     
      
   
