@@ -1,28 +1,22 @@
-name: Cypress Tests
-on:
-  push:
-    branches:
-      - main
- 
+name: E2E on Chrome
+
+on: [push]
+
 jobs:
-  cypress-run:
+  cypress-test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [16.x]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Show Cypress information
-        run: npx cypress info
-      - name: Verify Cypress can run
-        run: npx cypress verify
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: Cypress run
-        uses: cypress-io/github-action@v2
-        with:
-          build: npm run build
-          start: npm start
+      - name : testC
+        uses : cypress-io/github-action@v4
+
+
+
+
+
+
+
+
+
+
