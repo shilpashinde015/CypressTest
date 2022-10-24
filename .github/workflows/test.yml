@@ -19,6 +19,8 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
 
 
 
