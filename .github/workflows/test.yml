@@ -17,6 +17,6 @@ jobs:
           $(npm bin)/cypress verify
       
       - name: Run Cypress tests
-        run: npm run test:cy:run:chrome
+        run: npm run cy:run:chrome
         continue-on-error: true
    
