@@ -3,16 +3,22 @@
 name: End-to-end tests
 on: [push]
 jobs:
-  cypress-run:
-    runs-on: ubuntu-20.04
+ cypress-run:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v4
-
+      - name: Show Cypress information
+        run: npx cypress info
+      - name: Verify Cypress can run
+        run: npx cypress verify
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
 
 
 
