@@ -4,8 +4,6 @@
  * 
  */
 
-
-
  describe('This is my Assignment_6' , function(){
     beforeEach(function(){
         cy.fixture("CourseData").then(function (jsondata){
@@ -19,12 +17,8 @@
         cy.visit("https://ineuron-courses.vercel.app/login");
         cy.Login({ email:this.jsondata.username , password:this.jsondata.password  });
         cy.clickButton("Sign in")
-        cy.contains("span", "Manage").trigger('mouseover')
-       
-        cy.contains("Manage Courses").click({force:true})
-      
      
-       cy.contains("span", "Manage").trigger('mouseover')
+        cy.contains("span", "Manage").trigger('mouseover')
         cy.contains("Manage Courses").click({force:true})
         cy.clickButton("Add New Course")
         cy.clickButton("Save")
@@ -39,17 +33,13 @@
         cy.datePick("//input[@name='endDate']",29,"//div[@class='react-datepicker__week'][5]/div")
         cy.xpath("//button[@class='menu-btn']").click()
         cy.xpath("//button[contains(text(), 'Testing')][1]").click()
-        cy.xpath("//div/child::button[contains(text(), 'Save')]").click()
+        cy.xpath("//div/child::button[contains(text(), 'Save')]").click({force:true})
+        cy.wait(5000) 
+        const btn = cy.get('button.action-btn').last()
+        btn.click()
 
-        cy.get('table >tbody > tr td:nth-child(2)').should('contain.text','C')
-        cy.get('table >tbody > tr td:nth-child(2)')
-        .each(function(ele,index,list){
-        cy.log(ele.text())
-        if(ele.text().includes('C')){
-            cy.get('table >tbody > tr td:nth-child(11)').first().click()
-           }
-       })
-        
+
+             
     });
 
 })
