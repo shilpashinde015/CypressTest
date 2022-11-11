@@ -2,8 +2,7 @@ name: Run Cypress Test
 on:
   push:
     branches:
-      - 'main'
-      
+      - 'main'      
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
