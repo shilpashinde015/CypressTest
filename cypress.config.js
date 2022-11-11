@@ -1,5 +1,5 @@
 const { defineConfig } = require('cypress');
-//const { beforeRunHook, afterRunHook } = require('cypress-mochawesome-reporter/lib');
+const { beforeRunHook, afterRunHook } = require('cypress-mochawesome-reporter/lib');
 //CYPRESS_BASE_URL = "https://ineuron-courses.vercel.app"
 module.exports = defineConfig({
  // chromeWebSecurity: false,
