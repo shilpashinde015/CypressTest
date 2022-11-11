@@ -19,4 +19,4 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
-          spec:main/Assignment6.cy.js
+          spec: cypress/e2e/Scripts/Assignment6.cy.js
