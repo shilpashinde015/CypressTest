@@ -3,7 +3,7 @@ const { beforeRunHook, afterRunHook } = require('cypress-mochawesome-reporter/li
 //CYPRESS_BASE_URL = "https://ineuron-courses.vercel.app"
 module.exports = defineConfig({
  // chromeWebSecurity: false,
-  
+  projectId: "65jvkg",
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
     reportDir:"cypress/reports",
@@ -25,9 +25,9 @@ module.exports = defineConfig({
     },
  
  retries: {
-    "runMode": 2,
-    "openMode": 1
-  },
+  "runMode": 0,
+  "openMode": 0
+},
   e2e: {
     setupNodeEvents(on, config) {
       on('before:run', async (details) => {
