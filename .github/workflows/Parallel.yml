@@ -29,7 +29,12 @@ jobs:
         env:
              CYPRESS_RECORD_KEY: ff52ed62-5c84-4455-8628-98fcff8ecfed
     
-     
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-execution-report
+          path: cypress/reports/
+          retention-days: 10
        
              
              
