@@ -25,9 +25,15 @@ module.exports = defineConfig({
     },
  
  retries: {
+<<<<<<< HEAD
   "runMode": 0,
   "openMode": 0
 },
+=======
+    "runMode": 0,
+    "openMode": 0
+  },
+>>>>>>> 97f77c786cd09acedc072e8414aca492228ff501
   e2e: {
     setupNodeEvents(on, config) {
       on('before:run', async (details) => {

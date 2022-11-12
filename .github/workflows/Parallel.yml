@@ -1,0 +1,47 @@
+name: Run Cypress Test
+on:
+  push:
+    branches:
+      - 'main'      
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    strategy:
+      #fail-fast: false
+      matrix:
+        # run copies of the current job in parallel
+        containers: [1, 2]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install a project with a clean slate
+        run: |
+          npm ci --force
+          $(npm bin)/cypress cache path
+          $(npm bin)/cypress cache list
+          $(npm bin)/cypress verify
+       
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
+        with:
+          spec: cypress/e2e/Scripts/Assignment6.cy.js
+          record: true
+          parallel: true
+          group: 'Action example'
+        env:
+             CYPRESS_RECORD_KEY: ff52ed62-5c84-4455-8628-98fcff8ecfed
+    
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+         if:always()
+        with:
+          name: cypress-execution-report
+          path: cypress/reports/html
+          retention-days: 10
+          
+       
+             
+             
+             
+             
+             
