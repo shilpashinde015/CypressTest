@@ -31,9 +31,8 @@ jobs:
         env:
              CYPRESS_RECORD_KEY: ff52ed62-5c84-4455-8628-98fcff8ecfed
     
-      - name: Upload artifact
-        uses: actions/upload-artifact@v2
-         if:always()
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
         with:
           name: cypress-execution-report
           path: cypress/reports/html
